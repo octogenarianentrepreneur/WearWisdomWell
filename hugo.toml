@@ -1,0 +1,28 @@
+baseURL = "https://wearwisdomwell.com/"
+languageCode = "en-us"
+title = "Wear Wisdom Well"
+theme = ""
+
+[params]
+  description = "Thoughtful apparel for those who prefer conviction over confrontation. Quiet patriotism, reflective faith, understated wit."
+  tagline = "Wear Your Convictions — Gracefully."
+  subTagline = "Thoughtful apparel for people who still value wisdom, faith, family, freedom, and humor."
+  etsyShopURL = "https://www.etsy.com/shop/OctogenarianEntrep"
+  shopifyURL  = "https://www.octogenarianentrepreneur.com"
+  emailSignup = "#newsletter"
+
+[taxonomies]
+  collection = "collections"
+  tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

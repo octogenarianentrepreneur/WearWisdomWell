@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section style="padding:7rem 2rem 5rem;">
+  <div class="container">
+    <p class="section-eyebrow">Browse by theme</p>
+    <h1 class="section-title">The Collections</h1>
+    <p class="section-sub">Every design began as a conviction — something worth wearing without explanation.</p>
+    <div class="collections-grid">
+      {{ range .Pages }}
+      <a href="{{ .Permalink }}" class="coll-card">
+        {{ with .Params.image }}<img class="coll-img" src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+        <div class="coll-body">
+          <div class="coll-name">{{ .Title }}</div>
+          <div class="coll-desc">{{ .Description }}</div>
+          <div class="coll-count">{{ .Params.count }}</div>
+        </div>
+        <span class="coll-arrow">→</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

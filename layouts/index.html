@@ -1,0 +1,126 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Octogenarian Entrepreneur</p>
+    <h1 class="hero-title">{{ .Site.Params.tagline }}</h1>
+    <p class="hero-sub">{{ .Site.Params.subTagline }}</p>
+    <div class="hero-buttons">
+      <a href="{{ .Site.Params.etsyShopURL }}" target="_blank" rel="noopener" class="btn-primary">Shop the Collections</a>
+      <a href="{{ "/about/" | relURL }}" class="btn-ghost">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<div class="signal-bar">
+  <p>"Not everyone will get them. <strong>That's the point.</strong>"</p>
+</div>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="container">
+    <p class="section-eyebrow">Browse by theme</p>
+    <h2 class="section-title">The Collections</h2>
+    <p class="section-sub">Every design began as a conviction — something worth wearing without explanation.</p>
+    <div class="collections-grid">
+      {{ range where .Site.RegularPages "Section" "collections" }}
+      <a href="{{ .Permalink }}" class="coll-card">
+        {{ with .Params.image }}<img class="coll-img" src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+        <div class="coll-body">
+          <div class="coll-name">{{ .Title }}</div>
+          <div class="coll-desc">{{ .Params.description }}</div>
+          <div class="coll-count">{{ .Params.count }}</div>
+        </div>
+        <span class="coll-arrow">→</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section id="products" style="background:#f2ede4;">
+  <div class="container">
+    <p class="section-eyebrow">Selected favorites</p>
+    <h2 class="section-title">Featured Items</h2>
+    <p class="section-sub">Soft fabrics, crisp prints, free domestic shipping on every order.</p>
+    <div class="products-grid">
+      {{ range where (where .Site.RegularPages "Section" "products") ".Params.featured" true }}
+        {{ partial "product-card.html" . }}
+      {{ end }}
+    </div>
+    <div class="view-all-wrap">
+      <a href="{{ .Site.Params.etsyShopURL }}" target="_blank" rel="noopener" class="btn-outline">View All Items on Etsy</a>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section id="story" style="background:var(--navy);color:var(--cream);">
+  <div class="container">
+    <div class="story-grid">
+      <div>
+        <p class="section-eyebrow">Who we are</p>
+        <h2 class="section-title" style="color:var(--cream);">Born from a Life<br>Well Pursued.</h2>
+        <blockquote class="story-quote">"Wise enough to know better. Bold enough to do it anyway."</blockquote>
+        <p class="story-body">OctogenarianEntrepreneur was born from decades of lived experience — farms, finances, real estate, and relentless problem-solving. These aren't mass-market designs. They're wearable essays for people who think deeply, believe strongly, and don't feel the need to argue about it.</p>
+        <a href="{{ "/about/" | relURL }}" class="btn-ghost" style="margin-top:1.5rem;display:inline-block">Full Story →</a>
+      </div>
+      <div>
+        <div class="story-pillars">
+          <div class="pillar"><div class="pillar-num">01</div><div class="pillar-name">Signal Over Noise</div><div class="pillar-text">Quiet conviction, not loud performance.</div></div>
+          <div class="pillar"><div class="pillar-num">02</div><div class="pillar-name">Earned Perspective</div><div class="pillar-text">Wisdom only time can teach.</div></div>
+          <div class="pillar"><div class="pillar-num">03</div><div class="pillar-name">Subtle Humor</div><div class="pillar-text">Funny to those paying attention.</div></div>
+          <div class="pillar"><div class="pillar-num">04</div><div class="pillar-name">Premium Intent</div><div class="pillar-text">Soft fabrics. Crisp prints. No shortcuts.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST FROM THE BLOG -->
+<section>
+  <div class="container">
+    <p class="section-eyebrow">Gift guides &amp; more</p>
+    <h2 class="section-title">From the Journal</h2>
+    <div class="blog-grid">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <a href="{{ .Permalink }}" class="blog-card">
+        {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}" class="blog-img" loading="lazy">{{ end }}
+        <div class="blog-body">
+          <div class="blog-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+          <div class="blog-title">{{ .Title }}</div>
+          <div class="blog-desc">{{ .Description }}</div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container" style="text-align:center">
+    <h2>New designs added regularly.<br>Follow the shop so you don't miss what's next.</h2>
+    <p>Quiet patriotism · Reflective faith · Understated wit · Celebrities reimagined</p>
+    <a href="{{ .Site.Params.etsyShopURL }}" target="_blank" rel="noopener" class="btn-dark">Visit the Etsy Shop</a>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" style="background:var(--navy2);padding:4.5rem 2rem;text-align:center;">
+  <div class="container">
+    <p class="section-eyebrow">Stay in the loop</p>
+    <h2 class="section-title" style="color:var(--cream);">For Those Who Prefer<br>Signal Over Noise.</h2>
+    <p style="color:var(--warm);font-size:15px;margin-bottom:2rem;">Early access to new releases and digital guides. No clutter. Just what's worth reading.</p>
+    <form class="email-form" action="#" method="post">
+      <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p style="font-size:11px;color:var(--muted);margin-top:1rem;">No spam, ever. Unsubscribe any time.</p>
+  </div>
+</section>
+
+{{ end }}

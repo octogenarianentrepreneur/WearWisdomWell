@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section style="padding:7rem 2rem 5rem;">
+  <div class="container">
+    <p class="section-eyebrow">Gift guides &amp; resources</p>
+    <h1 class="section-title">From the Journal</h1>
+    <p class="section-sub">Gift ideas, shopping guides, and thoughts worth wearing.</p>
+    <div class="blog-grid">
+      {{ range .Pages }}
+      <a href="{{ .Permalink }}" class="blog-card">
+        {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}" class="blog-img" loading="lazy">{{ end }}
+        <div class="blog-body">
+          <div class="blog-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+          <div class="blog-title">{{ .Title }}</div>
+          <div class="blog-desc">{{ .Description }}</div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

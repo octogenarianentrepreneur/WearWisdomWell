@@ -1,0 +1,56 @@
+{{ define "main" }}
+<article class="product-page">
+  <div class="container">
+    <div class="product-layout">
+
+      <!-- Left: Image -->
+      <div class="product-image-col">
+        {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" class="product-main-img">
+        {{ end }}
+      </div>
+
+      <!-- Right: Details -->
+      <div class="product-details-col">
+        <p class="prod-collection-label">
+          {{ with .Params.collections }}
+            <a href="{{ "/collections/" | relURL }}{{ index . 0 }}/">{{ index . 0 | humanize }}</a>
+          {{ end }}
+        </p>
+        <h1 class="product-title">{{ .Title }}</h1>
+        <div class="product-price">${{ .Params.price }}{{ if .Params.free_shipping }} <span class="free-ship">· Free shipping</span>{{ end }}</div>
+
+        <div class="product-hook">{{ .Params.hook }}</div>
+
+        <div class="product-content">{{ .Content }}</div>
+
+        <div class="what-it-says">
+          <h3>What This Design Quietly Communicates</h3>
+          <ul>
+            {{ range .Params.signals }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <a href="{{ .Params.etsy_url }}" target="_blank" rel="noopener" class="btn-primary btn-buy">
+          Buy on Etsy — ${{ .Params.price }}
+        </a>
+        <p class="product-note">Printed on demand via Printify · Ships from the US · Soft cotton · Crew neck</p>
+      </div>
+
+    </div>
+
+    <!-- Related products -->
+    <div class="related-section">
+      <h2 class="section-title">You might also like</h2>
+      <div class="products-grid">
+        {{ $current := . }}
+        {{ range first 3 (where (where .Site.RegularPages "Section" "products") "Permalink" "ne" $current.Permalink) }}
+          {{ partial "product-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

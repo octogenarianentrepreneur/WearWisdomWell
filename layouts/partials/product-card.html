@@ -1,0 +1,17 @@
+{{/* Usage: {{ partial "product-card.html" . }} — pass a product page context */}}
+<a href="{{ .Permalink }}" class="prod-card">
+  {{ with .Params.image }}
+  <div class="prod-img-wrap">
+    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    {{ if $.Params.bestseller }}<span class="prod-badge">Bestseller</span>{{ end }}
+  </div>
+  {{ end }}
+  <div class="prod-body">
+    <div class="prod-collection">{{ with .Params.collections }}{{ index . 0 | humanize }}{{ end }}</div>
+    <div class="prod-name">{{ .Title }}</div>
+    <div class="prod-price-row">
+      <span class="prod-price">${{ .Params.price }}</span>
+      {{ if .Params.free_shipping }}<span class="prod-shipping">Free shipping</span>{{ end }}
+    </div>
+  </div>
+</a>

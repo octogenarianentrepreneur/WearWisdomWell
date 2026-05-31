@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article style="padding:7rem 2rem 5rem;">
+  <div class="container" style="max-width:760px;">
+    <p class="section-eyebrow">{{ .Section | humanize }}</p>
+    <h1 class="section-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="section-sub">{{ . }}</p>{{ end }}
+    <div class="prose">{{ .Content }}</div>
+  </div>
+</article>
+{{ end }}

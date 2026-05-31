@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section style="padding:7rem 2rem 5rem;">
+  <div class="container">
+    <p class="section-eyebrow">All designs</p>
+    <h1 class="section-title">Shop All Products</h1>
+    <p class="section-sub">Soft fabrics, crisp prints, free domestic shipping on every item.</p>
+    <div class="products-grid">
+      {{ range .Pages }}
+        {{ partial "product-card.html" . }}
+      {{ end }}
+    </div>
+    <div class="view-all-wrap" style="margin-top:3rem;">
+      <a href="{{ .Site.Params.etsyShopURL }}" target="_blank" rel="noopener" class="btn-outline">View All on Etsy</a>
+    </div>
+  </div>
+</section>
+{{ end }}
