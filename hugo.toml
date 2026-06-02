@@ -1,7 +1,6 @@
 baseURL = "https://wearwisdomwell.com/"
 languageCode = "en-us"
 title = "Wear Wisdom Well"
-theme = ""
 
 [params]
   description = "Thoughtful apparel for those who prefer conviction over confrontation. Quiet patriotism, reflective faith, understated wit."
