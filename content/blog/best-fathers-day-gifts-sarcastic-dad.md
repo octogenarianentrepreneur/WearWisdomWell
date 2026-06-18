@@ -45,4 +45,4 @@ Skip the gift cards. Skip the cologne. Find the shirt that sounds like something
 
 That's the whole idea.
 
-[Browse all designs →](https://www.etsy.com/shop/OctogenarianEntrep)
+[Browse all designs →](https://www.etsy.com/shop/WearWisdomWell)

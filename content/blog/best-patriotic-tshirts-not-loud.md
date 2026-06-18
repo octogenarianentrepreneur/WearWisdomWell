@@ -51,4 +51,4 @@ Patriotic shirts make excellent gifts for fathers, grandfathers, veterans, and a
 
 The key is matching the design to the person's personality. A retired history teacher and a retired Marine both love their country — but they might express it differently. Look at the designs above and ask which one sounds like something *they* would have said.
 
-[Browse all patriotic designs →](https://www.etsy.com/shop/OctogenarianEntrep)
+[Browse all patriotic designs →](https://www.etsy.com/shop/WearWisdomWell)
