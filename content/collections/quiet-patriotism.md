@@ -1,7 +1,7 @@
 ---
 title: "Quiet Patriotism"
-description: "Love of country, no argument required. Ten designs for Americans who prefer conviction over confrontation."
-count: "10 designs"
+description: "Love of country, no argument required. Six designs for Americans who prefer conviction over confrontation."
+count: "6 designs"
 image: "https://octogenarianentrepreneur.com/cdn/shop/files/Shopify_Quiet_Patriotism_Collection.png"
 ---
 
