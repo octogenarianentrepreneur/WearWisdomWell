@@ -1,7 +1,7 @@
 ---
 title: "Understated Wit"
-description: "Humor for those paying attention. Eight designs for people who find the funny in everything — especially the things they probably shouldn't."
-count: "8 designs"
+description: "Humor for those paying attention. Seven designs for people who find the funny in everything — especially the things they probably shouldn't."
+count: "7 designs"
 image: "https://octogenarianentrepreneur.com/cdn/shop/files/Shopify_Understated_Humor_Collection.png"
 ---
 
