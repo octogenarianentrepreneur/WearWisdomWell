@@ -1,7 +1,7 @@
 ---
 title: "Celebrities Reimagined"
-description: "Icons you already know, reframed through wit and wisdom. Three designs that give famous figures the context they always deserved."
-count: "3 designs"
+description: "Icons you already know, reframed through wit and wisdom. Six designs that give famous figures the context they always deserved."
+count: "6 designs"
 image: "https://octogenarianentrepreneur.com/cdn/shop/files/Shopify_Celebrities_Reimagined_Collection.png"
 ---
 
