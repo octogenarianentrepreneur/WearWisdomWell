@@ -1,7 +1,7 @@
 ---
 title: "Reflective Faith"
-description: "Belief worn softly — not broadcast loudly. Two designs for people whose faith is personal, not performative."
-count: "2 designs"
+description: "Belief worn softly — not broadcast loudly. One design for people whose faith is personal, not performative."
+count: "1 design"
 image: "https://octogenarianentrepreneur.com/cdn/shop/files/Shopify_Reflective_Faith_Collection.png"
 ---
 
