@@ -22,3 +22,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+{{ if and (eq .Section "blog") .IsPage }}{{ $article := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" (.Description | default .Site.Params.description) "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "url" .Permalink "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink) "author" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL) "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL) }}
+<script type="application/ld+json">
+    {{ $article | jsonify }}
+</script>
+{{ end }}
