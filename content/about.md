@@ -1,6 +1,7 @@
 ---
 title: "Our Story"
 description: "How decades of farms, finances, real estate, and faith shaped Octogenarian Entrepreneur — and why Wear Wisdom Well exists."
+date: 2026-06-28
 ---
 
 "Wise enough to know better. Bold enough to do it anyway."
