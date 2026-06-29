@@ -36,7 +36,7 @@
 {{ $product | jsonify | safeJS }}
 </script>
 {{ end }}
-{{ if .IsHome }}{{ $org := dict "@context" "https://schema.org" "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL "description" .Site.Params.description "sameAs" (slice .Site.Params.etsyShopURL .Site.Params.shopifyURL) }}
+{{ if .IsHome }}{{ $org := dict "@context" "https://schema.org" "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL "logo" ("logo.png" | absURL) "description" .Site.Params.description "sameAs" (slice .Site.Params.etsyShopURL .Site.Params.shopifyURL) }}
 <script type="application/ld+json">
 {{ $org | jsonify | safeJS }}
 </script>
