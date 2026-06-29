@@ -27,7 +27,7 @@
     <div class="collections-grid">
       {{ range where .Site.RegularPages "Section" "collections" }}
       <a href="{{ .Permalink }}" class="coll-card">
-        {{ with .Params.image }}<img class="coll-img" src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+        {{ $title := .Title }}{{ with .Params.image }}<img class="coll-img" src="{{ . }}" alt="{{ $title }}">{{ end }}
         <div class="coll-body">
           <div class="coll-name">{{ .Title }}</div>
           <div class="coll-desc">{{ .Params.description }}</div>
