@@ -12,4 +12,4 @@ Every design starts the same way — as a conviction worth wearing without expla
 
 This isn't mass-market. It's wearable essays for people who've earned their perspective and aren't interested in shouting it.
 
-*[Draft — Wendell, this reuses your existing homepage copy as a starting point. Personalize freely before it goes live: your own name, where you're from, what specifically led you here.]*
+Every piece in the shop carries that same throughline: say less, mean more. If something here catches your eye, there's likely a story behind it worth a second look — browse the collection and see which one speaks to you.
