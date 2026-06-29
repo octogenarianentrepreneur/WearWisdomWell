@@ -9,9 +9,11 @@
   <div class="prod-body">
     <div class="prod-collection">{{ with .Params.collections }}{{ index . 0 | humanize }}{{ end }}</div>
     <div class="prod-name">{{ .Title }}</div>
+    {{ if .Params.price }}
     <div class="prod-price-row">
       <span class="prod-price">${{ .Params.price }}</span>
       {{ if .Params.free_shipping }}<span class="prod-shipping">Free shipping</span>{{ end }}
     </div>
+    {{ end }}
   </div>
 </a>
