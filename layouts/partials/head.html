@@ -3,11 +3,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFHQS1BSD1"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'G-TFHQS1BSD1');
+      gtag('config', 'G-TFHQS1BSD1');
 </script>
 <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
@@ -15,7 +15,11 @@
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ else }}<meta property="og:image" content="https://octogenarianentrepreneur.com/cdn/shop/files/Shopify_Quiet_Patriotism_Collection.png">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="twitter:image" content="{{ with .Params.image }}{{ . | absURL }}{{ else }}https://octogenarianentrepreneur.com/cdn/shop/files/Shopify_Quiet_Patriotism_Collection.png{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +28,7 @@
 <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 {{ if and (eq .Section "blog") .IsPage }}{{ $article := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" (.Description | default .Site.Params.description) "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "url" .Permalink "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink) "author" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL) "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL) }}
 <script type="application/ld+json">
-    {{ $article | jsonify | safeJS }}
+{{ $article | jsonify | safeJS }}
 </script>
-{{ end }}
+{{ end }}</title>
+</script>
