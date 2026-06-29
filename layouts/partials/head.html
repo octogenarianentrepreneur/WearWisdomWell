@@ -30,5 +30,14 @@
 <script type="application/ld+json">
 {{ $article | jsonify | safeJS }}
 </script>
-{{ end }}</title>
+{{ end }}
+{{ if and (eq .Section "products") .IsPage }}{{ $product := dict "@context" "https://schema.org" "@type" "Product" "name" .Title "description" (.Description | default .Site.Params.description) "image" (.Params.image | absURL) "url" .Permalink "brand" (dict "@type" "Brand" "name" .Site.Title) "offers" (dict "@type" "Offer" "url" .Params.etsy_url "priceCurrency" "USD" "price" .Params.price "availability" "https://schema.org/InStock") }}
+<script type="application/ld+json">
+{{ $product | jsonify | safeJS }}
 </script>
+{{ end }}
+{{ if .IsHome }}{{ $org := dict "@context" "https://schema.org" "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL "description" .Site.Params.description "sameAs" (slice .Site.Params.etsyShopURL .Site.Params.shopifyURL) }}
+<script type="application/ld+json">
+{{ $org | jsonify | safeJS }}
+</script>
+{{ end }}
