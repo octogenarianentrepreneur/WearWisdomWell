@@ -3,24 +3,26 @@ languageCode = "en-us"
 title = "Wear Wisdom Well"
 
 [params]
-  description = "Thoughtful apparel for those who prefer conviction over confrontation. Quiet patriotism, reflective faith, understated wit."
-  tagline = "Wear Your Convictions — Gracefully."
-  subTagline = "Thoughtful apparel for people who still value wisdom, faith, family, freedom, and humor."
-  etsyShopURL = "https://www.etsy.com/shop/WearWisdomWell"
-  shopifyURL  = "https://www.octogenarianentrepreneur.com"
-  emailSignup = "#newsletter"
+description = "Thoughtful apparel for those who prefer conviction over confrontation. Quiet patriotism, reflective faith, understated wit."
+tagline = "Wear Your Convictions — Gracefully."
+subTagline = "Thoughtful apparel for people who still value wisdom, faith, family, freedom, and humor."
+etsyShopURL = "https://www.etsy.com/shop/WearWisdomWell"
+shopifyURL = "https://www.octogenarianentrepreneur.com"
+emailSignup = "#newsletter"
 
 [taxonomies]
-  tag = "tags"
+tag = "tags"
 
 [markup.goldmark.renderer]
-  unsafe = true
+unsafe = true
 
 [outputs]
-  home = ["HTML", "RSS"]
-  section = ["HTML", "RSS"]
-  page = ["HTML"]
+home = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML"]
+term = ["HTML"]
+page = ["HTML"]
 
 [sitemap]
-  changefreq = "weekly"
-  priority = 0.5
+changefreq = "weekly"
+priority = 0.5
