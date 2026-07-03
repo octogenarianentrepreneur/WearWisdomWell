@@ -1,17 +1,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:   #1a1a2e;
-  --navy2:  #141428;
-  --navy3:  #0f0f1e;
-  --gold:   #b8922a;
-  --gold2:  #d4a843;
-  --cream:  #f0ead6;
-  --warm:   #9b8c6e;
-  --muted:  #6b6052;
-  --light:  #f7f3ec;
-  --white:  #ffffff;
-  --border: rgba(184,146,42,0.18);
+    --navy:   #1a1a2e;
+    --navy2:  #141428;
+    --navy3:  #0f0f1e;
+    --gold:   #b8922a;
+    --gold2:  #d4a843;
+    --cream:  #f0ead6;
+    --warm:   #9b8c6e;
+    --muted:  #6b6052;
+    --light:  #f7f3ec;
+    --white:  #ffffff;
+    --border: rgba(184,146,42,0.18);
 }
 
 html { scroll-behavior: smooth; }
@@ -31,7 +31,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 
 /* ── HERO ── */
 .hero { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 5rem; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background-image: url('https://octogenarianentrepreneur.com/cdn/shop/files/Etsy_Say_it_without_saying_banner.png'); background-size: cover; background-position: center; opacity: 0.12; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(184,146,42,0.07) 0%, transparent 70%); }
 .hero-content { position: relative; z-index: 1; max-width: 700px; }
 .hero-eyebrow { font-size: 11px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
 .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(44px, 8vw, 72px); font-weight: 400; color: var(--cream); line-height: 1.1; margin-bottom: 1.5rem; }
@@ -103,7 +103,7 @@ section { padding: 6rem 2rem; }
 .what-it-says h3 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
 .what-it-says ul { list-style: none; }
 .what-it-says li { font-size: 14px; color: var(--warm); padding: 4px 0; }
-.what-it-says li::before { content: '— '; color: var(--gold); }
+.what-it-says li::before { content: '-- '; color: var(--gold); }
 .product-note { font-size: 12px; color: var(--muted); margin-top: 0.75rem; text-align: center; }
 .related-section { border-top: 1px solid rgba(26,26,46,0.08); padding-top: 3rem; }
 
@@ -166,11 +166,11 @@ footer { background: var(--navy3); padding: 3.5rem 2rem 2rem; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .story-grid, .product-layout { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { flex-direction: column; text-align: center; }
+    .nav-links { display: none; }
+    .story-grid, .product-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
 }
 @media (max-width: 540px) {
-  .collections-grid { grid-template-columns: 1fr 1fr; }
+    .collections-grid { grid-template-columns: 1fr 1fr; }
 }
