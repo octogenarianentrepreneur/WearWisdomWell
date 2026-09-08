@@ -46,17 +46,19 @@ The test: Every changed line should trace directly to the user's request.
 
 **Define success criteria. Loop until verified.**
 
-Transform tasks into verifiable goals:
-- "Add validation" -> "Write tests for invalid inputs, then make them pass"
-- "Fix the bug" -> "Write a test that reproduces it, then make it pass"
-- "Refactor X" -> "Ensure tests pass before and after"
+This is a Hugo static site — "verify" means the site builds and the page renders, not a unit-test suite. Transform tasks into verifiable goals:
+- "Add a page" → "Run `hugo` with no errors, then confirm the page renders at its URL in `hugo server`"
+- "Fix the broken layout" → "Reproduce it in `hugo server`, make the change, confirm it renders correctly and the build stays clean"
+- "Update front matter / schema" → "Build clean, then check the generated HTML or JSON-LD in `public/` is correct"
 
 For multi-step tasks, state a brief plan:
 ```
-1. [Step] -> verify: [check]
-2. [Step] -> verify: [check]
-3. [Step] -> verify: [check]
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
 ```
+
+Default verification for any change: `hugo` builds with no errors or warnings, and the affected page(s) render correctly in `hugo server`. Check internal links, and where relevant the generated schema in `public/`.
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
