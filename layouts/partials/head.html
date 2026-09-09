@@ -31,7 +31,7 @@
 {{ $article | jsonify | safeJS }}
 </script>
 {{ end }}
-{{ if and (eq .Section "products") .IsPage }}{{ $product := dict "@context" "https://schema.org" "@type" "Product" "name" .Title "description" (.Description | default .Site.Params.description) "image" (.Params.image | absURL) "url" .Permalink "brand" (dict "@type" "Brand" "name" .Site.Title) "offers" (dict "@type" "Offer" "url" .Params.etsy_url "priceCurrency" "USD" "price" .Params.price "availability" "https://schema.org/InStock") }}
+{{ if and (eq .Section "products") .IsPage }}{{ $offer := dict "@type" "Offer" "url" .Params.etsy_url "priceCurrency" "USD" "price" .Params.price "priceValidUntil" (printf "%d-12-31" now.Year) "availability" "https://schema.org/InStock" }}{{ if .Params.free_shipping }}{{ $offer = merge $offer (dict "shippingDetails" (dict "@type" "OfferShippingDetails" "shippingRate" (dict "@type" "MonetaryAmount" "value" "0" "currency" "USD") "shippingDestination" (dict "@type" "DefinedRegion" "addressCountry" "US"))) }}{{ end }}{{ $product := dict "@context" "https://schema.org" "@type" "Product" "name" .Title "description" (.Description | default .Site.Params.description) "image" (.Params.image | absURL) "url" .Permalink "brand" (dict "@type" "Brand" "name" .Site.Title) "offers" $offer }}
 <script type="application/ld+json">
 {{ $product | jsonify | safeJS }}
 </script>
