@@ -262,7 +262,7 @@ def build_blog():
                "publisher": {"@type": "Organization", "name": "WearWisdomWell", "logo": {"@type": "ImageObject", "url": SITE + "/apple-touch-icon.png"}},
                "mainEntityOfPage": f"{SITE}/blog/{x['slug']}/", "wordCount": words}]
         page(f"/blog/{x['slug']}/", f"{x['seo_title']} | WearWisdomWell", x["desc"], body,
-             og_image=x["image"], ld=ld, og_type="article",
+             og_image=x.get("share_image", x["image"]), ld=ld, og_type="article",
              crumbs=[("Home", "/"), ("Journal", "/blog/"), (x["title"], f"/blog/{x['slug']}/")])
     body = f"""<h1>Journal</h1><p class="lede">Notes on quiet patriotism, reflective faith, dry wit and gifts for people who'd rather be understood than seen.</p>
 <div class="teasers">{"".join(post_teaser(x) for x in POSTS)}</div>"""

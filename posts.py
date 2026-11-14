@@ -9,6 +9,7 @@ POSTS = [
                  "country and dry wit that he'll wear, not leave in a drawer."),
         "date": "2026-11-11",
         "image": "know-more-than-i-say-tee-1.jpg",
+        "share_image": "og-gift-guide.jpg",  # 1200x630 social card (Facebook/Pinterest link previews)
         "body": """
 <p>Every family has one. He doesn't make a list, he says he doesn't need anything, and when he opens a gift he nods, says thank you, and you never quite know whether he liked it. Then, six months later, you notice he's worn the same shirt to every cookout since.</p>
 <p>That's the man this guide is for. He has opinions, and a dry sense of humor, and he'd never wear a loud slogan across his chest. What he will wear is something that sounds like him: a line he'd have said himself if he were the type to say it.</p>
